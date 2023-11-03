@@ -11,6 +11,8 @@ struct Render_State {
 
 Render_State render_state;
 
+#include "renderer.cpp"
+
 LRESULT CALLBACK WindowCallback(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
 
 	LRESULT result = 0;
@@ -78,12 +80,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			DispatchMessage(&message);
 		}
 		
-		unsigned int* pixel = (unsigned int*)render_state.memory;
-		for (int y = 0; y < render_state.height; y++) {
-			for (int x = 0; x < render_state.width; x++) {
-				*pixel++ = 0x00CED1;
-			}
-		}
+		clear_screen(0x00CED1);
 
 		StretchDIBits(hdc, 0, 0, render_state.width, render_state.height, 0, 0, render_state.width, render_state.height, render_state.memory, &render_state.bitmap_info, DIB_RGB_COLORS, SRCCOPY);
 	}
