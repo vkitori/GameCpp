@@ -1,6 +1,7 @@
+#include "utils.cpp"
 #include <windows.h>
 
-bool running = true;
+global_variable bool running = true;
 
 struct Render_State {
 	int height, width;
@@ -74,14 +75,18 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	HDC hdc = GetDC(window);
 
 	while (running) {
+		// Input
 		MSG message;
 		while (PeekMessage(&message, window, 0, 0, PM_REMOVE)) {
 			TranslateMessage(&message);
 			DispatchMessage(&message);
 		}
-		
-		clear_screen(0x00CED1);
 
+		// Simulate
+		clear_screen(0x00CED1);
+		draw_rect(.5, .5, .2, .2, 0x01ff44);
+
+		// Render
 		StretchDIBits(hdc, 0, 0, render_state.width, render_state.height, 0, 0, render_state.width, render_state.height, render_state.memory, &render_state.bitmap_info, DIB_RGB_COLORS, SRCCOPY);
 	}
 }

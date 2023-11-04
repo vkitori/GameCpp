@@ -1,9 +1,15 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(516,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
 C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
   win32_platform.cpp
+D:\Study\Programming\Game\Game\Game\renderer.cpp(43,10): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\Study\Programming\Game\Game\Game\renderer.cpp(44,10): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\Study\Programming\Game\Game\Game\renderer.cpp(45,10): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\Study\Programming\Game\Game\Game\renderer.cpp(46,10): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\Study\Programming\Game\Game\Game\win32_platform.cpp(87,25): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\Study\Programming\Game\Game\Game\win32_platform.cpp(87,21): warning C4305: 'argument': truncation from 'double' to 'float'
   Generating code
-  2 of 3 functions (66.7%) were compiled, the rest were copied from previous compilation.
-    1 functions were new in current compilation
+  3 of 6 functions (50.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Game.vcxproj -> D:\Study\Programming\Game\Game\Game\Release\CppGame.exe
